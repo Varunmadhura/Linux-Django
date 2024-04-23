@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>Login:</h2>
+    <form method="post">
+       {% csrf_token %}
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="" required>
+        <br>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" value="" required>
+        <br>
+        <br>
+      </div>
+    </form>
+    <a href="scenario2"><button type="submit">Login</button></a>
+  </body>
+</html>

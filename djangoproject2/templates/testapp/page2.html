@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Django Scenario-2</title>
+  </head>
+  <body>
+    <h1>Django Test Scenario-2</h1>
+    <form action="{% url 'execute_command' %}" method="post">
+      {% csrf_token %}
+      <label for="hostname">Server ip:</label>
+      <input type="text" id="hostname" name="hostname" value="" required>
+      <br>
+      <br>
+      <label for="username">Username:</label>
+      <input type="text" id="username"  name="username" value="" required>
+      <br>
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" value="" required>
+      <br>
+      <br>
+      <label for="command1">Unix Command Input-1:</label>
+      <input type="text" id="command1" name="command1" value="" required>
+        <br>
+        <br>
+      <label for="command2">Unix Command Input-2:</label>
+      <input type="text" id="command2" name="command2" value="" required>
+        <br>
+        <br>
+      <label for="command3">Unix Command Input-3:</label>
+      <input type="text" id="command3" name="command3" value="" required>
+        <br>
+        <br>
+      <label for="command4">Unix Command Input-4:</label>
+      <input type="text" id="command4" name="command4" value="" required>
+        <br>
+        <br>
+      <label for="command5">Unix Command Input-5:</label>
+      <input type="text" id="command5" name="command5" value="" required>
+        <br>
+        <br>
+      <input type="submit" name="" value="Submit">
+      <div class="container">
+        <div class="jumbotron">
+          <div class="container">
+            <h1>Unix Command Output:</h1>
+            <textarea style="width:100%; height: 300px;" rows="8" cols="80" readonly>
+              {% if outputs %}
+
+                      {% for output in outputs %}
+                          {{ output }}
+                      {% endfor %}
+                  
+             {% endif %}
+            </textarea>
+            {% if error %}
+            <h2>Error:</h2>
+            <p>{{ error }}</p>
+            {% endif %}
+
+          </div>
+
+        </div>
+
+      </div>
+    </form>
+  </body>
+</html>
